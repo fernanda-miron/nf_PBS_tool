@@ -1,0 +1,94 @@
+oct-05 22:52:03.918 [main] DEBUG nextflow.cli.Launcher - $> nextflow run plot-microRNA-targets.nf --path_data test/data/pop1_out --path_data_2 test/data/pop1_pop2 --path_data_3 test/data/pop2_out --output_dir test/data/results -resume -with-report test/data/results/20211005_225200_report.html -with-dag test/data/results/20211005_225200.DAG.html
+oct-05 22:52:04.308 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 21.04.3
+oct-05 22:52:04.401 [main] INFO  nextflow.cli.CmdRun - Launching `plot-microRNA-targets.nf` [adoring_baekeland] - revision: a83c03faac
+oct-05 22:52:04.796 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/fermiron/.nextflow/plugins
+oct-05 22:52:04.802 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+oct-05 22:52:04.812 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins local root: .nextflow/plr/empty
+oct-05 22:52:04.840 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+oct-05 22:52:04.844 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+oct-05 22:52:04.858 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+oct-05 22:52:04.894 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+oct-05 22:52:05.066 [main] DEBUG nextflow.Session - Session uuid: 29128325-14b8-470d-b74f-d3d04ca99e0a
+oct-05 22:52:05.067 [main] DEBUG nextflow.Session - Run name: adoring_baekeland
+oct-05 22:52:05.075 [main] DEBUG nextflow.Session - Executor pool size: 4
+oct-05 22:52:05.198 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 21.04.3 build 5560
+  Created: 21-07-2021 15:09 UTC (10:09 CDT)
+  System: Linux 5.4.0-87-generic
+  Runtime: Groovy 3.0.7 on OpenJDK 64-Bit Server VM 11.0.11+9-Ubuntu-0ubuntu2.18.04
+  Encoding: UTF-8 (UTF-8)
+  Process: 13647@fermiron-VirtualBox [127.0.1.1]
+  CPUs: 4 - Mem: 4.8 GB (777.6 MB) - Swap: 2 GB (2 GB)
+oct-05 22:52:05.367 [main] DEBUG nextflow.Session - Work-dir: /home/fermiron/Imágenes/nf_PBS_DSL2/work [ext2/ext3]
+oct-05 22:52:05.368 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/fermiron/Imágenes/nf_PBS_DSL2/bin
+oct-05 22:52:05.412 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+oct-05 22:52:05.466 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+oct-05 22:52:05.975 [main] DEBUG nextflow.Session - Session start invoked
+oct-05 22:52:08.431 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+oct-05 22:52:08.536 [main] INFO  nextflow.Nextflow - 
+==========================================
+The PBS calculator tool
+v0.1
+==========================================
+
+oct-05 22:52:08.540 [main] INFO  nextflow.Nextflow - --Nextflow metadata--
+oct-05 22:52:08.566 [main] INFO  nextflow.Nextflow - Resumed run?   : true
+Run Name       : adoring_baekeland
+Current user   : fermiron
+Start time     : 2021-10-05T225205.534538-0500
+Script dir     : /home/fermiron/Imágenes/nf_PBS_DSL2
+Working dir    : /home/fermiron/Imágenes/nf_PBS_DSL2/work
+Current dir    : /home/fermiron/Imágenes/nf_PBS_DSL2
+Launch command : nextflow run plot-microRNA-targets.nf --path_data test/data/pop1_out --path_data_2 test/data/pop1_pop2 --path_data_3 test/data/pop2_out --output_dir test/data/results -resume -with-report test/data/results/20211005_225200_report.html -with-dag test/data/results/20211005_225200.DAG.html
+oct-05 22:52:08.568 [main] INFO  nextflow.Nextflow - 
+
+--Pipeline Parameters--
+oct-05 22:52:08.572 [main] INFO  nextflow.Nextflow - Input data     : test/data/pop2_out
+Results Dir    : test/data/results/nf_PBS-results/
+Intermediate Dir: test/data/results/nf_PBS-intermediate/
+oct-05 22:52:08.574 [main] INFO  nextflow.Nextflow - ==========================================
+Pipeline Start
+oct-05 22:52:09.333 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: wrangling_3, wrangling_2, fst_wrangling
+oct-05 22:52:09.524 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct-05 22:52:09.525 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct-05 22:52:09.562 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+oct-05 22:52:09.588 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=4.8 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+oct-05 22:52:10.009 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct-05 22:52:10.011 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct-05 22:52:10.040 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+oct-05 22:52:10.041 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+oct-05 22:52:10.258 [main] DEBUG nextflow.Session - Session aborted -- Cause: No such property: view for class: groovyx.gpars.dataflow.DataflowBroadcast
+oct-05 22:52:10.346 [main] DEBUG nextflow.Session - The following nodes are still active:
+  [operator] mix
+
+oct-05 22:52:10.374 [main] ERROR nextflow.cli.Launcher - @unknown
+groovy.lang.MissingPropertyException: No such property: view for class: groovyx.gpars.dataflow.DataflowBroadcast
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:65)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaClassGetPropertySite.getProperty(PojoMetaClassGetPropertySite.java:38)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callGetProperty(AbstractCallSite.java:329)
+	at Script_5f0f07f2$_runScript_closure3$_closure4.doCall(Script_5f0f07f2:240)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:186)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:170)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:52)
+	at nextflow.script.ChainableDef$invoke_a.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at nextflow.script.BaseScript.runDsl2(BaseScript.groovy:191)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:200)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:221)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:212)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:120)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:302)
+	at nextflow.cli.Launcher.run(Launcher.groovy:475)
+	at nextflow.cli.Launcher.main(Launcher.groovy:657)

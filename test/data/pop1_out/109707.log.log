@@ -1,0 +1,22 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf ./test/data/out.recode.vcf
+	--chr 3
+	--to-bp 197341
+	--weir-fst-pop ./test/data/pop_1
+	--weir-fst-pop ./test/data/pop_out
+	--keep ./test/data/pop_1
+	--keep ./test/data/pop_out
+	--out 109707.log
+	--from-bp 109707
+
+Keeping individuals in 'keep' list
+After filtering, kept 167 out of 252 Individuals
+Outputting Weir and Cockerham Fst estimates.
+Weir and Cockerham mean Fst estimate: 0.048703
+Weir and Cockerham weighted Fst estimate: 0.10332
+After filtering, kept 3575 out of a possible 20336 Sites
+Run Time = 0.00 seconds
