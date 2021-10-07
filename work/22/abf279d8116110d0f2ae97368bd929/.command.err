@@ -1,0 +1,15 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf out.recode.vcf
+	--keep pop2
+	--freq
+	--out pop2
+
+Keeping individuals in 'keep' list
+After filtering, kept 85 out of 252 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 20336 out of a possible 20336 Sites
+Run Time = 1.00 seconds

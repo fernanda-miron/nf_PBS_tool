@@ -1,1 +1,0 @@
-/home/fermiron/Imágenes/nf_PBS_DSL2/wrangling.R

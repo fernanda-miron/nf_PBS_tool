@@ -54,3 +54,54 @@ process wrangling_3 {
 	"""
 
 }
+
+process af_1 {
+
+	publishDir "${results_dir}",mode:"copy"
+
+	input:
+	file vcf_file
+	file pop1
+
+	output:
+	file "*.frq"
+
+	"""
+	vcftools --vcf ${vcf_file} --keep ${pop1} --freq --out pop1
+	"""
+
+}
+
+process af_2 {
+
+	publishDir "${results_dir}",mode:"copy"
+
+	input:
+	file vcf_file
+	file pop2
+
+	output:
+	file "*.frq"
+
+	"""
+	vcftools --vcf ${vcf_file} --keep ${pop2} --freq --out pop2
+	"""
+
+}
+
+process af_3 {
+
+	publishDir "${results_dir}",mode:"copy"
+
+	input:
+	file vcf_file
+	file pop3
+
+	output:
+	file "*.frq"
+
+	"""
+	vcftools --vcf ${vcf_file} --keep ${pop3} --freq --out pop3
+	"""
+
+}

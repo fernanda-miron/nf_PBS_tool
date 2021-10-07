@@ -91,6 +91,11 @@ pipeline_name = "nf_PBS"
 params.path_data = false  //if no inputh path is provided, value is false to provoke the error during the parameter validation block
 params.path_data_2 = false
 params.path_data_3 = false
+params.vcf_file = false
+params.pop1 = false
+params.pop2 = false
+params.pop3 = false
+params.weir_files = false
 params.help = false //default is false to not trigger help message automatically at every run
 params.version = false //default is false to not trigger version message automatically at every run
 
@@ -200,6 +205,11 @@ def pipelinesummary = [:]
 pipelinesummary['Input data']			= params.path_data
 pipelinesummary['Input data']			= params.path_data_2
 pipelinesummary['Input data']			= params.path_data_3
+pipelinesummary['Input data']			= params.vcf_file
+pipelinesummary['Input data']			= params.pop1
+pipelinesummary['Input data']			= params.pop2
+pipelinesummary['Input data']			= params.pop3
+pipelinesummary['Input data']			= params.weir_files
 pipelinesummary['Results Dir']		= results_dir
 pipelinesummary['Intermediate Dir']		= intermediates_dir
 /* print stored summary info */
@@ -221,12 +231,16 @@ fst_files = Channel.fromPath("${params.path_data}")
 fst_files_2 = Channel.fromPath("${params.path_data_2}")
 fst_files_3 = Channel.fromPath("${params.path_data_3}")
 r_script = Channel.fromPath("./wrangling.R")
-
+vcf_file = Channel.fromPath("${params.vcf_file}")
+pop1 = Channel.fromPath("${params.pop1}")
+pop2 = Channel.fromPath("${params.pop2}")
+pop3 = Channel.fromPath("${params.pop3}")
+weir_files = Channel.fromPath("${params.weir_files}*.fst")
 
 /* Import modules
 */
  include {
-   fst_wrangling; wrangling_2; wrangling_3 } from './nf_modules/modules.nf'
+   fst_wrangling; wrangling_2; wrangling_3; af_1; af_2 ; af_3} from './nf_modules/modules.nf'
 
  /*
   * main pipeline logic
@@ -236,8 +250,11 @@ r_script = Channel.fromPath("./wrangling.R")
    p1 = fst_wrangling(fst_files, r_script)
 	 p2 = wrangling_2(fst_files_2, r_script)
 	 p3 = wrangling_3(fst_files_3, r_script)
-	 fst_files_mix = p1.mix(p2,p3)
+	 p4 = af_1(vcf_file, pop1)
+	 p5 = af_2(vcf_file, pop2)
+	 p6 = af_3(vcf_file, pop3)
+	 fst_files_mix = p1.mix(p2,p3,p4,p5,p6, weir_files)
 	 fst_files_mix.view()
  }
 
-/* Mixing channels */
+/* Calculating AF for plotting */
