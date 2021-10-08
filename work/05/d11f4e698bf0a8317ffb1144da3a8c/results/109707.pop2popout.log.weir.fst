@@ -1,0 +1,1 @@
+/home/fermiron/Imágenes/nf_PBS_DSL2/test/data/weir_fst/109707.pop2popout.log.weir.fst

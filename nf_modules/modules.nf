@@ -105,3 +105,23 @@ process af_3 {
 	"""
 
 }
+
+process moving_files {
+
+	publishDir "${results_dir}",mode:"copy"
+
+	input:
+	file fst_files_mix
+	file script_R
+
+	output:
+	file "*.png"
+
+	errorStrategy 'ignore'
+	shell:
+	'''
+	mkdir results
+	mv !{fst_files_mix} results
+	Rscript --vanilla !{script_R} ./results pbs.png
+	'''
+}

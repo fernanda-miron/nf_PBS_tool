@@ -236,11 +236,14 @@ pop1 = Channel.fromPath("${params.pop1}")
 pop2 = Channel.fromPath("${params.pop2}")
 pop3 = Channel.fromPath("${params.pop3}")
 weir_files = Channel.fromPath("${params.weir_files}*.fst")
+mart_file = Channel.fromPath("${params.weir_files}*.txt")
+script_R = Channel.fromPath("./pbs_calculator.R")
+
 
 /* Import modules
 */
  include {
-   fst_wrangling; wrangling_2; wrangling_3; af_1; af_2 ; af_3} from './nf_modules/modules.nf'
+   fst_wrangling; wrangling_2; wrangling_3; af_1; af_2 ; af_3; moving_files} from './nf_modules/modules.nf'
 
  /*
   * main pipeline logic
@@ -253,8 +256,6 @@ weir_files = Channel.fromPath("${params.weir_files}*.fst")
 	 p4 = af_1(vcf_file, pop1)
 	 p5 = af_2(vcf_file, pop2)
 	 p6 = af_3(vcf_file, pop3)
-	 fst_files_mix = p1.mix(p2,p3,p4,p5,p6, weir_files)
-	 fst_files_mix.view()
+	 fst_files_mix = p1.mix(p2,p3,p4,p5,p6, weir_files, mart_file).toList()
+	 moving_files(fst_files_mix, script_R)
  }
-
-/* Calculating AF for plotting */
